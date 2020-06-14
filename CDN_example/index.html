@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ionic CDN demo - Basics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+    <!-- Makes it so that this file executes after the HTML has been loaded -->
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <!-- This is a web component -->
+    <!-- Ionic app - We wrap the entire ionic custom html in this -->
+    <ion-app>
+      <!-- Ion Header -->
+      <ion-header>
+        <!-- The Ionic toolbar -->
+        <ion-toolbar color="primary">
+          <!-- Title that is placed in the ionic toolbar -->
+          <ion-title>Body Mass Index Calculator</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <!-- Ion content -->
+      <ion-content class="ion-padding">
+        <!-- We can wrap each item in an ionic item tag -->
+        <ion-item>
+          <!-- Ion Label -->
+          <ion-label position="floating">Your Height:</ion-label>
+          <ion-input id="height-input"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Your Weight:</ion-label>
+          <ion-input id="weight-input"></ion-input>
+        </ion-item>
+          <!-- You are still able to mix both HTML and ionic HTML -->
+          <ion-grid class="ion-text-center ion-margin" >
+            
+            <!-- Input Row -->
+            <ion-row>
+              <ion-col>
+                <ion-button id="calculate-btn">
+                  <ion-icon slot="start" name="calculator-outline"></ion-icon>
+                  Calculate
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button id="reset-btn" fill='outline'>
+                  <ion-icon slot="start" name="refresh-outline"></ion-icon>
+                  Reset
+                </ion-button>
+              </ion-col>
+            </ion-row>
+
+            <!-- Result Row -->
+            <ion-row>
+              <ion-col id="result-lbl">
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>
